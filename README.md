@@ -65,9 +65,20 @@ php artisan key:generate
 ```
 
 
-Executar as migrations
+Executar migrations e seeders
 ```sh
-php artisan migration
+php artisan migration --seed
+```
+
+Executar Testes
+```sh
+php artisan test --filter SellerTest
+php artisan test --filter SaleTest
+```
+
+Arquivo API para Postman
+```sh
+./TrayPostman.json
 ```
 
 
