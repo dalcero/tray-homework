@@ -18,8 +18,8 @@ class SaleResource extends JsonResource
             'id' => $this->id,
             'name' => $this->seller->name,
             'email' => $this->seller->email,
-            'commission' => $this->commission,
-            'total' => $this->total,
+            'commission' => formatCurrency($this->commission),
+            'total' => formatCurrency($this->total),
             'date' => $this->created_at->format('d/m/Y H:i:s')
         ];
     }
