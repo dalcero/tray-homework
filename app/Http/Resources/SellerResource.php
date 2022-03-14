@@ -18,7 +18,7 @@ class SellerResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'commission' => $this->commission,
+            'commission' => formatPercent($this->commission),
         ];
     }
 }

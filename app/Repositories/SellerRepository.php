@@ -23,7 +23,7 @@ class SellerRepository implements SellerRepositoryInterface
 
     public function createSeller(array $sellerData) 
     {
-        $sellerData['commission'] = 8.5;
+        $sellerData['commission'] = config('tray.commission');
 
         $seller = Seller::create($sellerData);
         return new SellerStoreResource($seller);
