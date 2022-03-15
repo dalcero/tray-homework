@@ -22,7 +22,5 @@ class SendDailySalesReportToSellerJob implements ShouldQueue
     public function handle(MailService $mailService)
     {
         $mailService->sendDailySalesReportToSeller();
-
-        Log::info('OK! - Send daily sales report to sellers');
     }
 }
