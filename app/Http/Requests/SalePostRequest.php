@@ -28,7 +28,7 @@ class SalePostRequest extends FormRequest
     {
         return [
             'seller_id' => 'required',
-            'total'  => 'required|numeric',
+            'total'  => 'required|numeric|min:1',
         ];
     }
 
@@ -44,6 +44,7 @@ class SalePostRequest extends FormRequest
             'seller_id.required' => 'O campo Vendedor é obrigatório',
             'total.required' => 'O campo Total é obrigatório',
             'total.numeric' => 'O campo Total precisa ser um número',
+            'total.min' => 'O campo Total precisa ter um valor maior que 1',
         ];
     }
 

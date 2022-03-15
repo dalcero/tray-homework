@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\Services\MailService;
 use Illuminate\Console\Command;
-use Log;
 
 class SendDailySalesReportToSeller extends Command
 {
@@ -28,13 +27,8 @@ class SendDailySalesReportToSeller extends Command
      * @return void
      */
 
-    /* @var MailService */
-    private $mailService;
-
-    public function __construct(MailService $mailService)
+    public function __construct()
     {
-        $this->mailService = $mailService;
-
         parent::__construct();
     }
 
@@ -43,9 +37,9 @@ class SendDailySalesReportToSeller extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(MailService $mailService)
     {
-        $this->mailService->sendDailySalesReportToSeller();
+        $mailService->sendDailySalesReportToSeller();
         $this->info('OK! - Send daily sales report to sellers');
         return 0;
     }
